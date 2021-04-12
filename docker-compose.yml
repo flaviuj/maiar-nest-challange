@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  rest_db:
+    image: mysql:8
+    container_name: elrond-rest-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=asdf1234
+    ports:
+      - "3306:3306"
