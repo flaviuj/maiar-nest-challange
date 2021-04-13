@@ -29,14 +29,22 @@ export class TransactionDetailService {
     });
   }
 
-  getOneByChainTransactionId(
+  async getOneByChainTransactionId(
     transactionId: string,
   ): Promise<TransactionDetailEntity> {
-    return this.transactionDetailRepository.findOne({
+    const transactionDetail = await this.transactionDetailRepository.findOne({
       where: {
         chainTransactionId: transactionId,
       },
     });
+
+    if (!transactionDetail)
+      throw new HttpException(
+        'Transaction detail not found',
+        HttpStatus.NOT_FOUND,
+      );
+
+    return transactionDetail;
   }
 
   async createAttachment(
@@ -81,10 +89,8 @@ export class TransactionDetailService {
         HttpStatus.NOT_FOUND,
       );
 
-    console.log(transactionDetail.id);
-
     await this.transactionDetailMetaRepository.update(
-      { name: 'seen_at', transactionDetail },
+      { name: 'seen_at', transactionDetail: transactionDetail },
       { value: Date.now() + '' },
     );
 

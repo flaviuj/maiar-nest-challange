@@ -6,5 +6,6 @@ services:
     container_name: elrond-rest-db
     environment:
       - MYSQL_ROOT_PASSWORD=asdf1234
+      - MYSQL_DATABASE=elrond_rest
     ports:
       - "3306:3306"

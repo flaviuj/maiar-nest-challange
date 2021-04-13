@@ -29,6 +29,14 @@
 ## Installation
 
 ```bash
+$ docker-compose up
+```
+
+```bash
+$ cp .env.sample .env
+```
+
+```bash
 $ npm install
 ```
 
@@ -36,7 +44,7 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
+$ npm start
 
 # watch mode
 $ npm run start:dev
@@ -44,6 +52,10 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+### Postman
+
+- import collection and environment from `postman` folder
 
 ## Test
 

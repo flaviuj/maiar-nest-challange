@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "4732ba85-3faf-4e1b-a23c-2bdade1b7f92",
+		"name": "Maiar-rest-challange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Transaction Detail",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/transaction-details?page=1&limit=5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transaction-details"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one by transaction id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/transaction-details/transaction_1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transaction-details",
+								"transaction_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction detail attachment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "chainTransactionId",
+									"value": "transaction_1",
+									"type": "text"
+								},
+								{
+									"key": "deviceId",
+									"value": "device_1",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "encrypted_content",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/transaction-details/attachment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transaction-details",
+								"attachment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark attachment as seen",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/transaction-details/mark-attachment-as-seen/transaction_1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transaction-details",
+								"mark-attachment-as-seen",
+								"transaction_1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

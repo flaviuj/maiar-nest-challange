@@ -41,7 +41,7 @@ export class TransactionDetailController {
   }
 
   @HttpCode(200)
-  @Post('/mark-as-seen/:chain_id')
+  @Post('/mark-attachment-as-seen/:chain_id')
   markTransactionDetailAttachmentAsSeen(
     @Param('chain_id') id: string,
   ): Promise<TransactionDetailEntity> {
