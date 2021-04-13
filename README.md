@@ -60,12 +60,14 @@ $ npm run start:prod
 ## Test
 
 ```bash
-# unit tests
-$ npm run test
-
 # e2e tests
 $ npm run test:e2e
+```
 
-# test coverage
-$ npm run test:cov
+## Remove seen attachments script
+
+- in order for the script to delete attachments, in transaction_detail_meta table you will have to manually update `seen_at` value with a timestamp that has a value of 24 hours lower than now: `Date.now() - 86400000`
+
+```bash
+$ npm run remove-seen-attachments
 ```

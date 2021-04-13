@@ -60,7 +60,7 @@ export class TransactionDetailService {
     const removeMeta = new TransactionDetailMetaEntity();
 
     removeMeta.name = 'remove';
-    removeMeta.value = Date.now() % 2 ? 'never' : 'after-seen';
+    removeMeta.value = Date.now() % 2 ? 'never' : 'after-seen'; // for demo purpose
     removeMeta.transactionDetail = transactionDetail;
 
     const seenAtMeta = new TransactionDetailMetaEntity();
